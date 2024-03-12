@@ -5,11 +5,16 @@ pipeline {
         }
     }
 
+environment {
+    PATH="/u01/maven/apache-maven-3.9.6/bin:$PATH"
+
+}
+
     stages {
-        stage('Clone_code') {
+        stage ("build" {
             steps {
-                git branch: 'main', url: 'https://github.com/rajeshprakashtalla/tweet-trend-proj2udemy.git'
+                sh 'mvn clean deploy'
             }
-        }
+        })
     }
 }
