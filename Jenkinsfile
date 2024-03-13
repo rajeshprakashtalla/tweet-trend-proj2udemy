@@ -28,7 +28,7 @@ environment {
         stage ("SonarQube analysis") {
             environment {
                 scannerHome = tool 'valaxy-sonar-scanner'
-                JAVA_HOME="/opt/jdk7u51/jdk1.7.0_51:$PATH"
+            
             }
             steps {
                 withSonarQubeEnv('valaxy-sonarqube-server') {
