@@ -13,13 +13,22 @@ environment {
     stages {
         stage ("build") {
             steps {
-                sh 'mvn clean deploy'
+             echo " ------- build has started -------"
+                sh 'mvn clean deploy -Dmaven.test.skip=true'
+             echo " ------- build has completed -------"
             }
+        }
+        stage ("test"){
+           steps {
+            echo " ------- unit test started -------"
+            sh 'mvn surefire-report:report'
+             echo " ------- unit test completed -------"
+           }
         }
         stage ("SonarQube analysis") {
             environment {
                 scannerHome = tool 'valaxy-sonar-scanner'
-                PATH="/usr/bin:$PATH"
+                JAVA_HOME="/opt/jdk7u51/jdk1.7.0_51:$PATH"
             }
             steps {
                 withSonarQubeEnv('valaxy-sonarqube-server') {
