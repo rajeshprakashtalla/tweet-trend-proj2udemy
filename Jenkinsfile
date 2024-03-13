@@ -6,7 +6,7 @@ pipeline {
     }
 
 environment {
-    PATH="/trend_multibranch/bin:$PATH"
+    PATH="/opt/apache-maven-3.9.6/bin:$PATH"
 
 }
 
