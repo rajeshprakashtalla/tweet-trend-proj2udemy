@@ -19,6 +19,7 @@ environment {
         stage ("SonarQube analysis") {
             environment {
                 scannerHome = tool 'valaxy-sonar-scanner'
+                PATH="/usr/bin:$PATH"
             }
             steps {
                 withSonarQubeEnv('valaxy-sonarqube-server') {
