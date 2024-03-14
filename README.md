@@ -7,3 +7,4 @@ It also contains pom.xml which has all dependences and artfact name and version
 testing lines
 added new line 2
 asdsdsd
+updated jfrog
