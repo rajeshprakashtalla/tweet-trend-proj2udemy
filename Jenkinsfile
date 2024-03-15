@@ -44,8 +44,7 @@ environment {
                   }
            /   }
           }
- 
-
+    
   // keep below uncommented for skipping solar gate      
    //    stage ("Quality Gate") {
      //   steps {
