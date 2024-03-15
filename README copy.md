@@ -18,3 +18,8 @@ It also contains pom.xml which has all dependences and artfact name and version
 192.168.1.12 --> rajubuntu --> kube & docker 
 
 -----------
+
+jfrog Artifactory URL: https:/rajesh12345.jfrog.io
+Artifactorylocation: /opt/jenkins/workspace/Ttrend_multi_branch_main/jarstaging/com/valaxy/demo-workshop/2.1.2
+
+Credential: Jfrog
