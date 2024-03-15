@@ -42,7 +42,7 @@ environment {
                     //}
                       sh "${scannerHome}/bin/sonar-scanner"
                   }
-           /   }
+              }
           }
     
   // keep below uncommented for skipping solar gate      
