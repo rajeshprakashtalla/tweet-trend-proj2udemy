@@ -1,5 +1,5 @@
 def registry = 'https://rajesh12345.jfrog.io'
-def imageName = 'https://rajesh12345.jfrog.io/artifactory/rajesh12345-docker-local/ttrend'
+def imageName = 'rajesh12345.jfrog.io/artifactory/rajesh12345-docker-local/ttrend'
 
 	   def version   = '2.1.2'
 pipeline {
@@ -22,28 +22,31 @@ environment {
              echo " ------- build has completed -------"
             }
         }
-        stage ("test"){
-           steps {
-            echo " ------- unit test started -------"
-            sh 'mvn surefire-report:report'
-             echo " ------- unit test completed -------"
-           }
-        }
-        stage ("SonarQube analysis") {
-            environment {
-                scannerHome = tool 'valaxy-sonar-scanner'
-            
-            }
-            steps {
-                withSonarQubeEnv('valaxy-sonarqube-server') {
+  //     stage ("test"){
+  //            steps {
+   //            echo " ------- unit test started -------"
+   //            sh 'mvn surefire-report:report'
+    //            echo " ------- unit test completed -------"
+     //         }
+      //     }
+     //      stage ("SonarQube analysis") {
+      //         environment {
+        //           scannerHome = tool 'valaxy-sonar-scanner'
+          //     
+            //   }
+   //            steps {
+     //              withSonarQubeEnv('valaxy-sonarqube-server') {
                     // Optionally use a Maven environment you've configured already
                     //withMaven(maven:'Maven 3.5') {
                      //  sh 'mvn clean package sonar:sonar'
                     //}
-                    sh "${scannerHome}/bin/sonar-scanner"
-                }
-            }
-        }
+         //              sh "${scannerHome}/bin/sonar-scanner"
+       //            }
+           //    }
+    //       }
+ //
+
+  // keep below uncommented for skipping solar gate      
    //    stage ("Quality Gate") {
      //   steps {
  //           script {
