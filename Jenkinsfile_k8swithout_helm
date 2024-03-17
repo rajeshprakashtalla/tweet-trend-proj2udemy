@@ -110,23 +110,15 @@ environment {
             }
         }
 
-//               stage (" Deploy to kubernetes ") {
- //           steps {
- //               script {
- //                  echo '<--------------- Deploying to kubernetes Started --------------->'  
- //                   sh '/opt/kubernetes/deploy.sh'
- //                  echo '<--------------- Deploying to kubernetes Ended --------------->'  
- //               } 
- //           }
- //       }
-              stage(" Deploy using Helm") {
-          steps {
-            script {
-               echo '<--------------- Helm Deploy Started --------------->'
-               sh 'helm install /opt/helm/ttrend-0.1.0.tgz'
-               echo '<--------------- Helm deploy Ends --------------->'
+
+              stage (" Deploy to kubernetes ") {
+            steps {
+                script {
+                   echo '<--------------- Deploying to kubernetes Started --------------->'  
+                    sh '/opt/kubernetes/deploy.sh'
+                   echo '<--------------- Deploying to kubernetes Ended --------------->'  
+                } 
             }
-          }
         }
     }
 }
