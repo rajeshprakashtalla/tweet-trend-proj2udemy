@@ -1,5 +1,5 @@
 #!/bin/sh
-kubectl apply -f namespace.yaml
-kubectl apply -f secret.yaml
-kubectl apply -f deployment.yaml
-kubectl apply -f service.yaml
+kubectl apply -f /opt/kubernetes/namespace.yaml
+kubectl apply -f /opt/kubernetes/secret.yaml
+kubectl apply -f /opt/kubernetes/deployment.yaml
+kubectl apply -f /opt/kubernetes/service.yaml
