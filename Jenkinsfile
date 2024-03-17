@@ -11,7 +11,7 @@ pipeline {
 
 environment {
     PATH="/opt/apache-maven-3.9.6/bin:$PATH"
-
+    PATH="/opt/kubernetes:$PATH"
 }
 
     stages {
@@ -107,6 +107,17 @@ environment {
                     }    
                    echo '<--------------- Docker Publish Ended --------------->'  
                 }
+            }
+        }
+
+
+              stage (" Deploy to kubernetes ") {
+            steps {
+                script {
+                   echo '<--------------- Deploying to kubernetes Started --------------->'  
+                    sh '/opt/kubernetes/deploy.sh'
+                   echo '<--------------- Deploying to kubernetes Ended --------------->'  
+                } 
             }
         }
     }
