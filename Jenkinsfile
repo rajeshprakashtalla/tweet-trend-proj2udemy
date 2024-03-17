@@ -1,7 +1,7 @@
 def registry = 'https://rajesh12345.jfrog.io'
 def imageName = 'rajesh12345.jfrog.io/rajesh12345-docker-local/ttrend'
 
-	   def version   = '2.1.2'
+	   def version   = '2.1.3'
 pipeline {
     agent {
         node {
@@ -11,7 +11,7 @@ pipeline {
 
 environment {
     PATH="/opt/apache-maven-3.9.6/bin:$PATH"
-    
+
 }
 
     stages {
